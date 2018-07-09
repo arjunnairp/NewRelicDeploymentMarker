@@ -39,7 +39,7 @@ if ($Srv -eq '2')
 { 
 
 # New Relic Web application
-Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/8065927/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
+Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/1234567/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
 
     Write-Host "Deployment Marked on Web servers only"
 	Write-Host ""${user}" input "${revision}" with description "${description}" and change log "${changelog}" on Web servers only." 
@@ -50,7 +50,7 @@ elseif ($Srv -eq '3')
 { 
 
 # New Relic Web application
-Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/8717656/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
+Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/2345678/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
 
     Write-Host "Deployment Marked on Search servers only"
 	Write-Host ""${user}" input "${revision}" with description "${description}" and change log "${changelog}" on Search servers only." 
@@ -60,10 +60,10 @@ Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/8717656/deployme
 else
 {
 # New Relic Web application
-Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/8065927/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
+Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/1234567/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
 	
 # New Relic SearchWeb application    
-Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/8717656/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
+Invoke-WebRequest -Uri https://api.newrelic.com/v2/applications/2345678/deployments.json -Method POST -Headers @{'X-Api-Key'=''} -ContentType 'application/json' -Body $jsonbody
 
     Write-Host "Deployment Marked on Web and Search servers"
 	Write-Host ""${user}" input "${revision}" with description "${description}" and change log "${changelog}" on both Web and Search servers." 
